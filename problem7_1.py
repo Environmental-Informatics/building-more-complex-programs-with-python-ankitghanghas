@@ -25,9 +25,11 @@ def mysqrt(a):
         x=y
     return x
 def test_square_root(a): # this step creates the print table as specified by the question
-    print('a','mysqrt(a)','math.sqrt(a)','diff')
+    dash = '-'*40
+    print('{:<4s}{:^20s}{:^20s}{:<30s}'.format('a','mysqrt(a)','math.sqrt(a)','diff'))
+    print(dash)
     for i in range(len(a)):
-        print(a[i],mysqrt(a[i]),math.sqrt(a[i]),mysqrt(a[i])-math.sqrt(a[i]))
+        print('{:<4.1f}{:<20.12f}{:<20.12f}{:<30s}'.format(a[i],mysqrt(a[i]),math.sqrt(a[i]),str(mysqrt(a[i])-math.sqrt(a[i]))))
 # ask for either a list of positive floats or just one value of float as an input
 a=[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0]
 test_square_root(a)
